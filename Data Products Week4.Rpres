@@ -1,0 +1,54 @@
+Data Products Week4
+========================================================
+author: VENKATA MUTTINENI
+date: 01/03/2018
+autosize: true
+
+Over View
+========================================================
+This presentation is a part of Data Products Course week 4 project.
+
+The application demo built by Shiny and can be found at the URL: https://muttineni.shinyapps.io/Week4Project/
+
+Source code and presentation - GitHub URL: https://github.com/muttineni2020/Data-Products-Week4
+
+Web Application
+========================================================
+
+This web application calculates linear regression of different variables at mtcars data set. The application provides user with different inputs.This allows user to identify performance of the car based on the vartiables he/she selected.
+
+Select first variable of the regression:
+
+- Mile per Gallon (mpg),
+- Horse Power (hp)
+
+Select second variable:
+
+- Automatic Transmission (am),
+- Manual transmission (gear),
+- Cylinders (cyl)
+
+
+Data Set
+========================================================
+
+I have taken mtcars data set for our analysis.
+
+```{r}
+head(mtcars)
+summary(mtcars)
+```
+
+Plotting variable 1 (mpg/hp) vs varibale 2(am/gear/cyl)
+========================================================
+
+```{r echo=FALSE}
+data("mtcars")
+  mtcarsCal<- mpg ~ cyl
+  mtcars.lm <- lm(formula=mtcarsCal, data=mtcars)
+     
+# draw the scatter diagram with the specified value of mpg
+  plot(mtcarsCal, data=mtcars)
+  abline(mtcars.lm,col="Blue")
+    
+```
